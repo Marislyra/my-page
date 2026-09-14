@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>绑定流程</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #e9ebee;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: #333;
+    padding: 24px 32px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2d3d;
+    margin-bottom: 20px;
+  }
+  .step {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 26px;
+  }
+  .step::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 26px;
+    bottom: -26px;
+    width: 1px;
+    background: #d0d4da;
+  }
+  .step:last-child::before { display: none; }
+  .step-num {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #cfe0f7;
+    color: #3b73c4;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 24px;
+  }
+  .step-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1f2d3d;
+    margin-bottom: 10px;
+  }
+  .step-body { color: #333; }
+  .step-body p { margin-bottom: 10px; }
+  .sub-step {
+    margin-top: 14px;
+    margin-bottom: 12px;
+  }
+  .sub-step-title {
+    font-weight: 700;
+    color: #1f2d3d;
+    margin-bottom: 6px;
+  }
+  .panel {
+    background: #fbfbfc;
+    border: 1px solid #e2e5e9;
+    padding: 16px 18px;
+    margin-top: 12px;
+  }
+  .qr {
+    width: 160px;
+    height: 160px;
+    background:
+      repeating-conic-gradient(#000 0% 25%, #fff 0% 50%) 0 0 / 16px 16px;
+    border: 6px solid #fff;
+    box-shadow: 0 0 0 1px #ddd;
+    margin-bottom: 10px;
+  }
+  .manual-link {
+    color: #3b73c4;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .key {
+    color: #1f2d3d;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    letter-spacing: .5px;
+  }
+  .input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  input[type="text"] {
+    width: 220px;
+    padding: 7px 10px;
+    border: 1px solid #ccd2d9;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+  }
+  input[type="text"]::placeholder { color: #a8b0b8; }
+  input[type="text"]:focus { border-color: #3b73c4; }
+  .btn {
+    display: inline-block;
+    margin-top: 12px;
+    background: #2f8ee0;
+    color: #fff;
+    border: none;
+    padding: 8px 22px;
+    font-size: 14px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+  <div class="title">绑定流程</div>
+
+  <!-- 步骤 1 -->
+  <div class="step">
+    <div class="step-num">1</div>
+
+
+      <div class="sub-step">
+        <div class="sub-step-title">第一步：下载安装以下任一验证器APP</div>
+        <p>Google 身份验证器：安卓 / 苹果 / Google商店</p>
+        <p>Microsoft 身份验证器：安卓 / 苹果 / Google商店</p>
+        <p>微信（WeChat）：微信搜索“腾讯身份验证器”小程序</p>
+      </div>
+
+      <div class="sub-step">
+        <div class="sub-step-title">第二步：绑定验证器APP或小程序</div>
+        <p>打开您安装的验证器APP或小程序进入首页，点击页面的“+”（加号按钮），选择“扫描二维码”，扫描以下二维码：</p>
+
+        <div class="panel">
+          <div class="qr"></div>
+          <a class="manual-link" href="#">无法扫描，请输入以下密钥</a><br>
+          <span class="key">SCYI **** **** ****</span>
+        </div>
+      </div>
+
+      <div class="sub-step">
+        <div class="sub-step-title">第三步：输入验证码完成绑定</div>
+        <p>扫描成功后，APP/小程序会显示一个6位数的动态验证码，请在下方输入该验证码提交以完成绑定。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 步骤 2 -->
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-title">输入6位数验证码</div>
+    <div class="input-row">
+      <input type="text" placeholder="6 Digits">
+    </div>
+    <button class="btn">提交绑定</button>
+  </div>
+
+</body>
+</html>
