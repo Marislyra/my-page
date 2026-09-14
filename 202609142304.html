@@ -121,6 +121,13 @@
     border-radius: 2px;
     cursor: pointer;
   }
+  .link {
+    color:blue;
+    text-decoration: none;
+  }
+  .link:hover {
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
@@ -134,9 +141,18 @@
 
       <div class="sub-step">
         <div class="sub-step-title">第一步：下载安装以下任一验证器APP</div>
-        <p>Google 身份验证器：安卓 / 苹果 / Google商店</p>
-        <p>Microsoft 身份验证器：安卓 / 苹果 / Google商店</p>
-        <p>微信（WeChat）：微信搜索“腾讯身份验证器”小程序</p>
+        <p>Google 身份验证器：
+          <a class="link" href="https://apkpure.com/google-authenticator/com.google.android.apps.authenticator2" target="_blank" rel="noopener">安卓</a> / 
+          <a class="link" href="https://apps.apple.com/cn/app/google-authenticator/id388497605" target="_blank" rel="noopener">苹果</a> / 
+           <a class="link" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" target="_blank" rel="noopener">Google商店</a>
+        </p>
+        <p>
+          Microsoft 身份验证器：
+          <a class="link" href="https://apkpure.com/microsoft-authenticator/com.azure.authenticator" target="_blank" rel="noopener">安卓</a> / 
+          <a class="link" href="https://apps.apple.com/cn/app/microsoft-authenticator/id983156458" target="_blank" rel="noopener">苹果</a> / 
+           <a class="link" href="https://play.google.com/store/apps/details?id=com.azure.authenticator" target="_blank" rel="noopener">Google商店</a>
+        </p>
+        <p>微信（WeChat）：微信搜索“<span style="color:blue;">腾讯身份验证器</span>”小程序</p>
       </div>
 
       <div class="sub-step">
@@ -145,7 +161,7 @@
 
         <div class="panel">
           <div class="qr"></div>
-          <a class="manual-link" href="#">无法扫描，请输入以下密钥</a><br>
+          <span class="manual-link" href="#">无法扫描，请输入以下密钥</span><br>
           <span class="key">SCYI **** **** ****</span>
         </div>
       </div>
